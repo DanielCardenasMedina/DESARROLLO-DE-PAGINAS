@@ -1,19 +1,20 @@
-function showSection(sectionId) {
-   const sections = document.querySelectorAll('.hero, .content-section');
-   sections.forEach(section => {
-       section.classList.remove('active');
-       section.style.opacity = '0';
-       section.style.transform = 'translateY(20px)';
-   });
+function mostrarProgreso() {
+   document.getElementById('pagina-principal').style.display = 'none';
+   document.getElementById('progreso-academico').style.display = 'block';
+   
+   const completedCycles = [1]; // Ejemplo de ciclos completados, esto debería provenir de tu base de datos
 
-   setTimeout(() => {
-       document.getElementById(sectionId).classList.add('active');
-       document.getElementById(sectionId).style.opacity = '1';
-       document.getElementById(sectionId).style.transform = 'translateY(0)';
-   }, 500);
+   for (let i = 1; i <= 8; i++) {
+      const foco = document.getElementById(CL${i});
+      if (completedCycles.includes(i)) {
+         foco.classList.add('encendido');
+      } else {
+         foco.classList.remove('encendido');
+      }
+   }
 }
 
-function showLogin() {
-   alert('Redirigiendo a la página de inicio de sesión de Google.');
-   // Aquí podrías agregar la redirección a la página de inicio de sesión real
-}
+document.addEventListener('DOMContentLoaded', function () {
+   // Asegúrate de que el primer foco esté encendido por defecto
+   document.getElementById('CL1').classList.add('encendido');
+});
