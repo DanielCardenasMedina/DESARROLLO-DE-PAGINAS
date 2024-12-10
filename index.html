@@ -1,78 +1,153 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TECNOVA</title>
-    <link rel="stylesheet" href="styles.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Página Principal</title>
+   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+   <!-- Página Principal -->
+   <div id="pagina-principal">
+      <img src="ucal_logo.png" alt="Logo UCAL" />
+      <nav>
+         <ul>
+            <li><a href="#">La Universidad</a></li>
+            <li><a href="#">Carreras</a></li>
+            <li><a href="#">Admisión</a></li>
+            <li><a href="#">Internacional</a></li>
+            <li><a href="#">Empleabilidad</a></li>
+            <li><a href="#">Posgrado</a></li>
+            <li><a href="#">Trasládate</a></li>
+            <li><a href="login.html">Estudiantes</a></li>
+            <li><a href="#">Docentes</a></li>
+         </ul>
+      </nav>
+      <section class="hero">
+         <h1>EN UCAL</h1>
+         <p>SÉ EXITOSO NUE</p>
+         <h2>SOLUCIONA CON TUS IDEAS</h2>
+         <p>¡Desde la carrera que te mueve!</p>
+      </section>
+      <div class="facultades">
+         <button class="facultad">Facultad ARQUITECTURA Y DISEÑO</button>
+         <button class="facultad">Facultad COMUNICACIÓN Y CIENCIAS SOCIALES</button>
+         <button class="facultad">Facultad NEGOCIOS</button>
+      </div>
+      <button onclick="mostrarProgreso()">Ver Progreso Académico</button>
+   </div>
 
-    <header>
-        <div class="logo">
-            <h1>TECNOVA</title></h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="toggleSection('comun')">COMUN</a></li>
-                <li><a href="#" onclick="toggleSection('oro')">ORO</a></li>
-                <li><a href="#" onclick="toggleSection('platino')">PLATINO</a></li>
-            </ul>
-        </nav>
-        <div class="search">
-            <input type="text" placeholder="Buscar...">
-            <button>BUSCAR</button>
-        </div>
-    </header>
+   <!-- Progreso Académico -->
+   <div id="progreso-academico" style="display: none;">
+      <h1>Progreso Académico</h1>
+      <div class="focos">
+         <span id="CL1" class="foco" onclick="verDetalles('curso1.html')">CL1</span>
+         <span id="CL2" class="foco" onclick="verDetalles('curso2.html')">CL2</span>
+         <span id="CL3" class="foco" onclick="verDetalles('curso3.html')">CL3</span>
+         <span id="CL4" class="foco" onclick="verDetalles('curso4.html')">CL4</span>
+         <span id="CL5" class="foco" onclick="verDetalles('curso5.html')">CL5</span>
+         <span id="CL6" class="foco" onclick="verDetalles('curso6.html')">CL6</span>
+         <span id="CL7" class="foco" onclick="verDetalles('curso7.html')">CL7</span>
+         <span id="CL8" class="foco" onclick="verDetalles('curso8.html')">CL8</span>
+      </div>
+      <button onclick="irCalificaciones()">Ver Calificaciones</button>
+      <button onclick="irEvaluaciones()">Ver Evaluaciones</button>
+      <button onclick="volverInicio()"> <img src="door_icon.png" alt="Volver al Inicio" /></button>
+      <button onclick="irTutorAcademico()">Tutor Académico</button>
+   </div>
 
-    <main>
-
-        <!-- Sección COMUN -->
-        <section id="comun" class="content" style="display:none;">
-            <h2>Paquete Básico de Gestión Digital</h2>
-            <p>Descripción: Este paquete introduce herramientas digitales simples para la gestión de cultivos y recursos.</p>
-            <p>Características:
-                Plataforma de seguimiento de cosechas.
-                Alertas meteorológicas básicas.
-                Acceso a un sistema de inventario para registrar productos y suministros.
-                Beneficios: Mejora la productividad mediante una mejor planificación y uso de recursos.
-                Costo Aproximado: Bajo, accesible para pequeños agricultores</p>
-        </section>
-
-        <!-- Sección ORO -->
-        <section id="oro" class="content" style="display:none;">
-            <h2>Paquete de Comercialización Digital</h2>
-            <p>Descripción: Enfocado en facilitar la venta directa de productos a mercados locales e internacionales..</p>
-            <p>Características:
-                Creación de tiendas virtuales personalizadas.
-                Herramientas de marketing digital y publicidad.
-                Plataforma de gestión de clientes y logística.
-                Beneficios: Elimina intermediarios y amplía los mercados para aumentar las ganancias.
-                Costo Aproximado: Medio-Alto, ideal para agricultores o pequeñas empresas con productos diferenciados.</p>
-        </section>
-
-        <!-- Sección PLATINO -->
-        <section id="platino" class="content" style="display:none;">
-            <h2>Paquete Integral de Transformación Digital</h2>
-            <p>Solución completa para transformar digitalmente las operaciones de una empresa o comunidad rural.</p>
-            <p>Características:
-                Todos los servicios de los paquetes anteriores.
-                Capacitación personalizada para agricultores y empleados en habilidades digitales.
-                Integración con herramientas de gestión avanzada y tecnología de IoT (Internet de las Cosas) para monitoreo remoto.
-                Beneficios: Mejora radicalmente la productividad y abre múltiples oportunidades de negocio.
-                Costo Aproximado: Alto, adecuado para cooperativas o asociaciones rurales con alto volumen de producción.</p>
-        </section>
-
-        <section id="carousel">
-            <div class="carousel-slide">
-                <img src="imagenes/imagen1.jpg" alt="Imagen 1">
-                <img src="imagenes/imagen2.jpg" alt="Imagen 2">
-                <img src="imagenes/imagen3.jpg" alt="Imagen 3">
+   <!-- Página Ucal Connect -->
+   <div id="ucal-connect" style="display: none;">
+      <nav>
+         <ul>
+            <li><a href="#"><img src="calendar_icon.png" alt="Calendario" onclick="mostrarCalendario()"/></a></li>
+            <li><a href="#"><img src="email_icon.png" alt="Correo" /></a></li>
+            <li><a href="#"><img src="settings_icon.png" alt="Configuración" /></a></li>
+            <li><a href="#"><img src="notifications_icon.png" alt="Notificaciones" /></a></li>
+            <li><a href="index.html"><img src="logout_icon.png" alt="Cerrar Sesión" /></a></li>
+         </ul>
+      </nav>
+      <main>
+         <h1>Hola, Angel Palacios</h1>
+         <section class="widgets">
+            <div class="widget"><h2>Campus Digital</h2></div>
+            <div class="widget"><h2>Correo</h2></div>
+            <div class="widget"><h2>Asistencia</h2></div>
+            <div class="widget"><h2><a href="progreso_academico.html">Progreso académico</a></h2></div>
+            <div class="widget"><h2>Biblioteca</h2></div>
+            <div class="widget"><h2>Consultas y Solicitudes</h2></div>
+            <div class="widget"><h2><a href="tutor_academico.html">Tutor académico</a></h2></div>
+            <div class="widget soporte-tecnico">
+               <h2>SOPORTE TECNICO PARA CUALQUIER CONSULTA</h2>
+               <p>Escribe aquí tu duda...</p>
+               <input type="text" id="soporte-texto" placeholder="Escribe aquí tu duda..." />
+               <button onclick="enviarConsulta()">Enviar</button>
             </div>
-        </section>
+         </section>
+      </main>
+      <aside>
+         <div class="reminders">
+            <p>Próxima clase: Mié. 9:30 - 10:30 Experiencias Formativas</p>
+            <p>Próxima entrega: Mié. 23:59 Experiencias Formativas</p>
+            <p>Próxima clase: Jue. 9:30 - 10:30 Herramientas digitales</p>
+            <p>Próxima entrega: Jue. 23:59 Herramientas digitales</p>
+         </div>
+      </aside>
+   </div>
 
-    </main>
+   <!-- Página de Calificaciones -->
+   <div id="calificaciones" style="display: none;">
+      <h1>Experiencia Formativas - Calificaciones</h1>
+      <div class="detalles">
+         <h2>CALIFICACIONES</h2>
+         <div class="semana">
+            <h3>SEMANA 1</h3>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Ítem de calificación</th>
+                     <th>Porcentaje</th>
+                     <th>Rango</th>
+                     <th>Nota</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>EXÁMENES</td>
+                     <td>30%</td>
+                     <td>0 - 20</td>
+                     <td>16</td>
+                  </tr>
+                  <tr>
+                     <td>QUIZZES</td>
+                     <td>20%</td>
+                     <td>0 - 20</td>
+                     <td>18</td>
+                  </tr>
+                  <tr>
+                     <td>TOTAL DEL CURSO</td>
+                     <td>100%</td>
+                     <td>0 - 20</td>
+                     <td>17</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div class="recordatorio">
+               <h3>Recordatorio</h3>
+               <p>Próxima clase: Mié. 9:30 - 10:30 Experiencias Formativas</p>
+               <p>Próxima entrega: Mié. 23:59 Experiencias Formativas</p>
+               <p>Próxima clase: Jue. 9:30 - 10:30 Herramientas digitales</p>
+               <p>Próxima entrega: Jue. 23:59 Herramientas digitales</p>
+            </div>
+         </div>
+      </div>
+   </div>
 
-    <script src="script.js"></script>
-
-</body>
-</html>
+   <!-- Página de Evaluaciones -->
+   <div id="evaluaciones" style="display: none;">
+      <h1>Experiencia Formativas - Evaluaciones</h1>
+      <div class="detalles">
+         <h2>EVALUACIONES</h2>
+         <div class="examenes">
+            <h3>EXÁMENES</h3>
+            <p>Al finalizar tus clases
